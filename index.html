@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    body {
+        font-family: 'Source Code Pro', monospace;
+        background-color: #0093E9; 
+        background-image: linear-gradient(90deg, #3524ce 0%, #575cac 100%);
+        color: azure;
+    }
+    .container_navbar {
+
+        display: flex;
+        margin: 0 auto;
+        background-color: gradient(rgb(2, 25, 131));
+        height: 50px;
+        justify-content: center;
+        
+
+    }
+    .navbar_item {
+        margin: 10px 20px;
+        font-size: 20px;
+        
+    }
+    .navbar_item a{
+        color: azure;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.6s;
+    }
+    .navbar_item a:hover {
+        color: rgba(253,29,29,1);
+        transition: 0.6s;
+
+    }
+    .text {
+
+    background-color : rgb(131,58,180);;
+    background-image: linear-gradient(45deg, rgba(252,176,69,1) 2%, rgba(253,29,29,1) 40%,  rgba(131,58,180,1) 100%);;
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size: large;
+    }
+    .hero {
+   
+        margin:180px 60px;
+    }
+    i {
+        width: 20px;
+        height: 50px;
+        text-align: left;
+    }
+
+
+    .main_container {
+
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows:60% auto ;
+        row-gap:10px;
+        column-gap:7px;
+        grid-template-areas: 
+         "post_image post_description" 
+         "post_text post_description";
+        border: 4px dashed rgb(185, 142, 126);
+        margin:180px 60px;
+        
+    } 
+
+    .post_image {
+        grid-area: post_image;
+        border: 2px dashed coral;
+        text-align:center ;
+    }
+
+    .post_text {
+        grid-area: post_text;
+        border: 2px dashed coral;
+        text-align:center ;
+        
+    }
+
+    .post_description {
+        grid-area: post_description;
+        border: 2px dashed coral;
+        
+        
+
+
+    }
+    .post_description h2 {
+        text-align: center;
+    }
+    .post_description p {
+        margin-left: 8px;
+        text-align :auto;
+        margin-bottom: 20px;
+    }
+    img {
+        
+        height: 90%;
+        width: 95%;
+        object-fit:fill;
+        margin-top: 4%;
+        margin-bottom: 10%;
+      
+    }
+    @media only screen and (max-width:780px) {
+        a span{
+            display: none;
+        }
+        .navbar_item {
+            font-size: 35px;
+            margin:0 auto;
+        }
+        .text {
+            font-size: 15px;
+        }
+        
+        .main_container {
+            grid-template-columns: 1fr;
+            grid-template-rows:15em auto auto;
+            grid-template-areas: 
+            "post_image" 
+             "post_text"
+             "post_description";
+            margin:90px 30px;
+        }
+
+    }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container_navbar">
+        <div class="navbar_item"><a href="#"><i class="fa fa-home"></i><span> Home</span></a></div>
+        <div class="navbar_item"><a href="#"><i class="fa fa-search"></i><span> Projects</a></div>
+        <div class="navbar_item"><a href="#"><i class="fa fa-users"></i><span> About us</span></a></div>
+        <div class="navbar_item"><a href="#"><i class="fa fa-address-card"></i><span> Contact us</span></a></div>
+
+    </div>
+    <hr>
+    <div class="hero">
+
+        <div class="text">
+            <h1>I've used flex and grid display to create this page</h1>
+            <h3>Flex for the navbar </h3>
+            <h3>Grid for the content below</h3>
+        </div>  
+    </div>
+    <div class="main_container">
+        <div class="post_image">
+          <img src="grid.png" alt="code of grid css" />
+        </div>
+        <div class="post_text">
+            <h2>Flex & grid and their importance in Front-end development</h2>
+            <p>The post image and text take 2 fractions of the whole width, while the right column takes 1 fraction, refers as grid-template-columns.</p>
+            <p>The grid-template-rows means the height by each element, the row-gap and the column-gap means the space between.</p>
+          </div>
+          <div class="post_description">
+              <h2>Grid functionality</h2>
+           <p>Here is an example of implementing a <strong>Grid</strong><br><br>
+            First of all you need to make a container which holds the different blocks that you want to create
+           and put its <b>display</b> attribut equal to <b>flex</b>, then start to position you inner blocks with the use of these attributs</p>
+            <ul>
+                <li><b>grid-template-columns</b></li>
+                <li><b>grid-template-columns</b></li>
+                <li><b>row-gap</b></li>
+                <li><b>column-gap</b></li>
+                <li><b>grid-gap</b></li>
+                <li><b>grid-template-areas</b></li>
+                <br>
+              </ul>  
+              <p>and more importantly by using <b>grid-template-areas</b> by giving those blocks names and affecting them to this attribute</p>
+             
+             <p>I put the dashed border only so you can see how the blocks are aligned</p>
+       
+          </div>
+
+    </div>
+</body>
+</html>
